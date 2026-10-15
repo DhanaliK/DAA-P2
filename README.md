@@ -216,7 +216,7 @@ To reproduce the API demonstration with the backend running: `.\.venv\Scripts\py
 | 3 | Algorithms + benchmark engine | Manual implementations, event counters, correctness oracles, isolated timing, memory, cancellation |
 | 4 | Adaptive history + visualization | SQLite relations, similarity matching, shrinkage, prediction gap, charts and interactive paths |
 
-## College demonstration
+## Demonstration
 
 1. Paste or upload your own sorting input, inspect its profile and explain the recommendation.
 2. Watch comparisons and moves in the visualizer; switch between eligible algorithms.
@@ -225,24 +225,3 @@ To reproduce the API demonstration with the backend running: `.\.venv\Scripts\py
 5. Paste or upload graph edges and follow traversal or distance updates. Select all-pairs to see the distance matrix evolve.
 6. Use Complexity lab to measure increasing prefixes of your submitted dataset.
 7. Inspect the saved experiment in History. Reanalyze the same input to see historical evidence influence the score.
-
-## Limits and honest claims
-
-- This is a local educational research prototype, not an always-optimal selector or a production multi-user service.
-- Inputs are bounded: 20,000 values (homogeneous integers or strings), integer absolute value ≤10¹², 2,000 queries, 80 nodes, 2,000 edges. Uploads are limited to 1 MB in the UI. Text values allow 1–256 characters each, with at most 1,000,000 characters across data and queries. Inversion profiling uses O(n log n) comparisons and O(n) auxiliary space; string comparisons can cost O(L) for maximum length L.
-- Insertion runs above 2 million inversions are skipped. Counting allocation is capped at 200,000 buckets and max(256,32n). Expensive runs may time out even below a size cap.
-- Memory constraints describe the algorithm core. All benchmarks also need request/input/output copies and instrumentation.
-- The update-frequency setting affects searching suitability; the current benchmark measures an immutable query batch, not a sequence of update operations.
-- Graphs use integer weights and unique edge pairs. Negative-cycle detection reports that finite shortest paths are invalid; it does not enumerate every affected vertex. DFS highlights its discovery tree, not shortest paths.
-- Theoretical curves use unit coefficients; empirical points do not prove Big-O. Instrumentation changes constants; very close timings may fluctuate.
-- Historical similarity omits hardware and query hit-rate models. Copying a database between machines can make evidence less representative. An all-pairs recommendation has only one implemented candidate.
-- Browser refresh clears the active input. Completed history remains; incomplete in-memory jobs are lost on backend restart. Cancellation does not save partial runs.
-- Output previews are bounded to 120 items. Full output is verified inside each worker. Full input payloads are not archived, so retain your input file to reproduce an arbitrary upload.
-- Latest 500 experiments are displayed; matching searches the latest 100 per domain. Metrics reflect that visible window.
-- npm audit currently reports a development-only dependency chain through the Next.js ESLint plugin (`braces`/`micromatch`/`fast-glob`) with no registry-provided fix. The production-only audit reported zero vulnerabilities during verification. Re-audit before any public deployment. Do not use a forced major downgrade to disguise this warning.
-
-Future work: larger streaming datasets, controlled repeated cross-validation against multiple fixed baselines, persisted job queues, machine-specific evidence, richer search update workloads, multiple all-pairs strategies, and confidence intervals for close measurements.
-
-## Implementation references
-
-The project uses the official [Next.js installation guide](https://nextjs.org/docs/app/getting-started/installation), [FastAPI CORS documentation](https://fastapi.tiangolo.com/tutorial/cors/), and the [shadcn/ui Button primitive](https://ui.shadcn.com/docs/components/radix/button). Runtime APIs were also checked against the bundled Next.js documentation.
