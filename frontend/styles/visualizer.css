@@ -1,0 +1,457 @@
+.visualizer {
+  margin: 28px 0;
+  padding: 28px;
+  scroll-margin-top: 24px;
+  border-color: #ccd9d4;
+  box-shadow: 0 12px 40px #243e4510;
+}
+.visualizer-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+.visualizer-heading h2 {
+  font-size: 28px;
+  margin: 8px 0;
+  letter-spacing: -0.7px;
+}
+.visualizer-heading p {
+  color: #72827f;
+  font-size: 13px;
+}
+.visualizer-heading label {
+  min-width: 210px;
+}
+.visualizer-empty {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 25px;
+  margin: 24px 0;
+  background: #edf2eb;
+  border: 1px dashed #b5c4ae;
+  border-radius: 12px;
+}
+.visualizer-empty p {
+  color: #627573;
+  font-size: 13px;
+}
+.visualizer-empty svg {
+  color: #6f8962;
+  flex-shrink: 0;
+}
+.trace-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px 0;
+  border-top: 1px solid #e2e8df;
+}
+.trace-toolbar label {
+  margin-left: 12px;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.trace-position {
+  margin-left: auto;
+  font:
+    12px Consolas,
+    monospace;
+  color: #6b7e77;
+}
+.trace-stage {
+  background: radial-gradient(ellipse at top, #fcfdfb, #f0f5ee);
+  border: 1px solid #dce5d7;
+  border-radius: 12px;
+  padding: 24px 18px 16px;
+}
+.trace-scroll {
+  overflow-x: auto;
+}
+.trace-bars {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 8px;
+  height: 220px;
+  padding: 18px 6px 0;
+}
+.trace-cell {
+  flex: 1 0 32px;
+  min-width: 32px;
+  max-width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  gap: 7px;
+}
+.trace-cell > div {
+  width: 100%;
+  border-radius: 6px 6px 2px 2px;
+  background: #8aa5a5;
+  transition:
+    height 0.22s ease,
+    background 0.2s ease;
+}
+.trace-cell.active > div {
+  background: #ed734b;
+  box-shadow: 0 0 0 3px #ed734b22;
+}
+.trace-cell.done > div {
+  background: #84a665;
+}
+.trace-value {
+  font:
+    600 12px Consolas,
+    monospace;
+  color: #324d50;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+  text-align: center;
+}
+.trace-cell.active .trace-value {
+  color: #bf4f2d;
+}
+.trace-cell small {
+  font:
+    10px Consolas,
+    monospace;
+  color: #84988c;
+}
+.trace-axis {
+  display: block;
+  text-align: center;
+  color: #728579;
+  margin-top: 15px;
+  font-size: 10px;
+}
+.trace-explanation {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #243f42;
+  color: #fff;
+  border-radius: 9px;
+  padding: 18px;
+  margin-top: 16px;
+  min-height: 75px;
+}
+.trace-explanation p {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.trace-explanation > b {
+  color: #eabfa0;
+  font:
+    13px Consolas,
+    monospace;
+}
+.phase-chip {
+  text-transform: uppercase;
+  font:
+    10px Consolas,
+    monospace;
+  letter-spacing: 0.6px;
+  background: #e67650;
+  padding: 8px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.phase-chip.complete {
+  background: #7b985e;
+}
+.trace-variables {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 0 0;
+  font-size: 12px;
+  color: #637770;
+}
+.trace-variables > span,
+.trace-variables > b {
+  background: #f0f3ed;
+  border-radius: 5px;
+  padding: 6px 10px;
+}
+.trace-variables b {
+  color: #284a4c;
+  margin-left: 8px;
+}
+.trace-scrubber {
+  margin: 20px 0 12px;
+  font-size: 11px;
+}
+.trace-scrubber input {
+  width: 100%;
+  padding: 0;
+  min-height: 24px;
+  accent-color: #ec734b;
+  cursor: pointer;
+}
+.trace-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  color: #70847b;
+}
+.trace-footer > span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.active-dot,
+.visited-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ed734b;
+  display: inline-block;
+}
+.visited-dot {
+  background: #84a665;
+  margin-left: 10px;
+}
+.trace-query-results {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.trace-query-results > span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font:
+    12px Consolas,
+    monospace;
+  padding: 10px;
+  border-radius: 7px;
+}
+.trace-query-results .found {
+  background: #e5efda;
+  color: #48633c;
+}
+.trace-query-results .missing {
+  background: #f9ede5;
+  color: #986044;
+}
+.trace-graph {
+  display: block;
+  width: 100%;
+  max-height: 410px;
+}
+.trace-graph line {
+  stroke: #98abae;
+  stroke-width: 2;
+}
+.trace-graph text {
+  font:
+    12px "Segoe UI",
+    sans-serif;
+  fill: #456362;
+  paint-order: stroke;
+  stroke: #f4f8f1;
+  stroke-width: 4px;
+}
+.trace-graph .edge-active line,
+.trace-graph .edge-active path {
+  stroke: #ee764d;
+  stroke-width: 4;
+}
+.trace-graph .trace-node circle {
+  fill: #fff;
+  stroke: #8aaba6;
+  stroke-width: 2;
+}
+.trace-graph .trace-node text {
+  stroke: none;
+  fill: #314e4c;
+  font-weight: 600;
+}
+.trace-graph .trace-node.visited circle {
+  fill: #e1eccf;
+  stroke: #85a566;
+}
+.trace-graph .trace-node.current circle {
+  fill: #ed734b;
+  stroke: #c75433;
+  stroke-width: 3;
+}
+.trace-graph .trace-node.current text:not(.node-distance) {
+  fill: white;
+}
+.trace-graph .node-distance {
+  font:
+    11px Consolas,
+    monospace;
+}
+.trace-matrix {
+  max-height: 330px;
+  margin-top: 16px;
+}
+.trace-matrix td,
+.trace-matrix th {
+  padding: 8px 12px;
+}
+.trace-matrix caption {
+  text-align: left;
+  padding: 10px;
+  font-size: 12px;
+}
+.trace-unavailable,
+.trace-loading {
+  padding: 28px;
+  border-radius: 8px;
+  background: #f5f4eb;
+  font-size: 13px;
+}
+.trace-unavailable p {
+  margin-top: 8px;
+}
+.watch-link {
+  padding: 13px 18px;
+  border-radius: 7px;
+  color: #355854;
+  background: #e7efdf;
+  font-weight: 600;
+  font-size: 13px;
+  text-align: center;
+}
+.input-method {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #526b68;
+  font-size: 13px;
+}
+.query-input {
+  margin-bottom: 18px;
+}
+.query-input small {
+  font-size: 11px;
+  color: #73847f;
+}
+.data-empty-art {
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  color: #aac0a9;
+  text-align: center;
+}
+.data-empty-art a {
+  color: #e9b796;
+  font-size: 12px;
+}
+.empty-bucket {
+  margin: auto;
+  color: #748779;
+  font-size: 13px;
+}
+@media (max-width: 760px) {
+  .visualizer {
+    padding: 18px;
+  }
+  .visualizer-heading {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .visualizer-heading h2 {
+    font-size: 24px;
+  }
+  .trace-toolbar label {
+    margin-left: 0;
+  }
+  .trace-explanation {
+    flex-wrap: wrap;
+  }
+  .trace-explanation p {
+    flex-basis: 100%;
+    order: 2;
+  }
+  .trace-stage {
+    padding: 12px 8px;
+  }
+  .trace-graph {
+    min-height: 250px;
+  }
+  .trace-position {
+    font-size: 10px;
+  }
+  .input-tabs {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .trace-cell > div {
+    transition: none;
+  }
+}
+
+/* Text values have no numeric magnitude: show their actual spelling and position. */
+.text-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px 0;
+  max-width: 100%;
+}
+.text-values > span {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 64px;
+  max-width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #dce3dc;
+  border-radius: 10px;
+  background: #f5f7f2;
+}
+.text-values small {
+  color: #687b80;
+  font-size: 10px;
+}
+.text-values code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+}
+.text-values.ordered > span,
+.trace-text > span.done {
+  background: #e8f0df;
+  border-color: #b4c99c;
+}
+.trace-text {
+  min-height: 150px;
+  align-items: center;
+}
+.trace-text > span.active {
+  background: #fff0e7;
+  border: 2px solid #e96c43;
+  box-shadow: 0 3px 12px #e96c4320;
+}
+.data-type-control {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.data-type-control select {
+  flex: 1;
+  min-width: 170px;
+}

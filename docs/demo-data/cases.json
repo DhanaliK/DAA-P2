@@ -1,0 +1,2886 @@
+[
+  {
+    "id": "01-mixed",
+    "title": "Mixed values: Quick Sort",
+    "domain": "sorting",
+    "payload": {
+      "data": [
+        38,
+        12,
+        71,
+        5,
+        24,
+        12,
+        90,
+        3,
+        45,
+        18
+      ]
+    },
+    "algorithms": [
+      "quick"
+    ],
+    "why": "Pause at the pivot and explain comparisons and swaps. Duplicates are grouped by the three-way partition.",
+    "file": "sorting/01-mixed.csv",
+    "neutral_recommendation": "quick",
+    "exclusions": {},
+    "profile": {
+      "n": 10,
+      "minimum": 3,
+      "maximum": 90,
+      "range": 88,
+      "unique": 9,
+      "duplicate_ratio": 0.1,
+      "sortedness": 0.4444444444444444,
+      "reverse_sortedness": 0.5555555555555556,
+      "inversions": 23,
+      "disorder": 0.5111111111111111,
+      "histogram": [
+        2,
+        2,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "sample": [
+        38,
+        12,
+        71,
+        5,
+        24,
+        12,
+        90,
+        3,
+        45,
+        18
+      ],
+      "sample_note": "First 120 elements; profile uses the complete input."
+    },
+    "outputs": {
+      "quick": [
+        3,
+        5,
+        12,
+        12,
+        18,
+        24,
+        38,
+        45,
+        71,
+        90
+      ]
+    }
+  },
+  {
+    "id": "02-nearly-sorted",
+    "title": "Nearly sorted: Insertion Sort",
+    "domain": "sorting",
+    "payload": {
+      "data": [
+        5,
+        10,
+        15,
+        20,
+        30,
+        25,
+        35,
+        40,
+        45,
+        50
+      ]
+    },
+    "algorithms": [
+      "insertion"
+    ],
+    "why": "Only 30 and 25 are out of order: exactly one inversion. Very little shifting is needed.",
+    "file": "sorting/02-nearly-sorted.csv",
+    "neutral_recommendation": "insertion",
+    "exclusions": {},
+    "profile": {
+      "n": 10,
+      "minimum": 5,
+      "maximum": 50,
+      "range": 46,
+      "unique": 10,
+      "duplicate_ratio": 0.0,
+      "sortedness": 0.8888888888888888,
+      "reverse_sortedness": 0.1111111111111111,
+      "inversions": 1,
+      "disorder": 0.022222222222222223,
+      "histogram": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "sample": [
+        5,
+        10,
+        15,
+        20,
+        30,
+        25,
+        35,
+        40,
+        45,
+        50
+      ],
+      "sample_note": "First 120 elements; profile uses the complete input."
+    },
+    "outputs": {
+      "insertion": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50
+      ]
+    }
+  },
+  {
+    "id": "03-reverse",
+    "title": "Reverse order: compare Insertion and Merge",
+    "domain": "sorting",
+    "payload": {
+      "data": [
+        60,
+        55,
+        50,
+        45,
+        40,
+        35,
+        30,
+        25,
+        20,
+        15,
+        10,
+        5
+      ]
+    },
+    "algorithms": [
+      "insertion",
+      "merge"
+    ],
+    "why": "There are 66 inversions. Show repeated shifts, then compare divide-and-merge steps on exactly the same input.",
+    "file": "sorting/03-reverse.csv",
+    "neutral_recommendation": "quick",
+    "exclusions": {},
+    "profile": {
+      "n": 12,
+      "minimum": 5,
+      "maximum": 60,
+      "range": 56,
+      "unique": 12,
+      "duplicate_ratio": 0.0,
+      "sortedness": 0.0,
+      "reverse_sortedness": 1.0,
+      "inversions": 66,
+      "disorder": 1.0,
+      "histogram": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "sample": [
+        60,
+        55,
+        50,
+        45,
+        40,
+        35,
+        30,
+        25,
+        20,
+        15,
+        10,
+        5
+      ],
+      "sample_note": "First 120 elements; profile uses the complete input."
+    },
+    "outputs": {
+      "insertion": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60
+      ],
+      "merge": [
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60
+      ]
+    }
+  },
+  {
+    "id": "04-small-range",
+    "title": "Small range: Counting Sort",
+    "domain": "sorting",
+    "payload": {
+      "data": [
+        3,
+        1,
+        4,
+        0,
+        2,
+        1,
+        3,
+        4,
+        2,
+        0,
+        4,
+        1,
+        2,
+        3,
+        0,
+        2,
+        4,
+        1,
+        0,
+        3,
+        1,
+        4,
+        2,
+        0,
+        3,
+        2,
+        1,
+        4,
+        3,
+        0,
+        4,
+        2,
+        0,
+        1,
+        3,
+        1,
+        2,
+        4,
+        0,
+        3
+      ]
+    },
+    "algorithms": [
+      "counting"
+    ],
+    "why": "Forty values occupy just five integer buckets (0 to 4). Explain count, prefix count, and output placement.",
+    "file": "sorting/04-small-range.csv",
+    "neutral_recommendation": "counting",
+    "exclusions": {},
+    "profile": {
+      "n": 40,
+      "minimum": 0,
+      "maximum": 4,
+      "range": 5,
+      "unique": 5,
+      "duplicate_ratio": 0.875,
+      "sortedness": 0.48717948717948717,
+      "reverse_sortedness": 0.5128205128205128,
+      "inversions": 326,
+      "disorder": 0.41794871794871796,
+      "histogram": [
+        8,
+        0,
+        0,
+        8,
+        0,
+        0,
+        8,
+        0,
+        0,
+        8,
+        0,
+        0,
+        8,
+        0,
+        0,
+        0
+      ],
+      "sample": [
+        3,
+        1,
+        4,
+        0,
+        2,
+        1,
+        3,
+        4,
+        2,
+        0,
+        4,
+        1,
+        2,
+        3,
+        0,
+        2,
+        4,
+        1,
+        0,
+        3,
+        1,
+        4,
+        2,
+        0,
+        3,
+        2,
+        1,
+        4,
+        3,
+        0,
+        4,
+        2,
+        0,
+        1,
+        3,
+        1,
+        2,
+        4,
+        0,
+        3
+      ],
+      "sample_note": "First 120 elements; profile uses the complete input."
+    },
+    "outputs": {
+      "counting": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    }
+  },
+  {
+    "id": "05-duplicates",
+    "title": "Duplicate-heavy input",
+    "domain": "sorting",
+    "payload": {
+      "data": [
+        7,
+        3,
+        7,
+        7,
+        2,
+        3,
+        7,
+        2,
+        7,
+        3,
+        2,
+        7
+      ]
+    },
+    "algorithms": [
+      "quick",
+      "counting"
+    ],
+    "why": "Only three distinct values. Compare the Quick Sort equal-pivot partition with Counting Sort buckets.",
+    "file": "sorting/05-duplicates.csv",
+    "neutral_recommendation": "quick",
+    "exclusions": {},
+    "profile": {
+      "n": 12,
+      "minimum": 2,
+      "maximum": 7,
+      "range": 6,
+      "unique": 3,
+      "duplicate_ratio": 0.75,
+      "sortedness": 0.5454545454545454,
+      "reverse_sortedness": 0.5454545454545454,
+      "inversions": 27,
+      "disorder": 0.4090909090909091,
+      "histogram": [
+        3,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        6,
+        0,
+        0
+      ],
+      "sample": [
+        7,
+        3,
+        7,
+        7,
+        2,
+        3,
+        7,
+        2,
+        7,
+        3,
+        2,
+        7
+      ],
+      "sample_note": "First 120 elements; profile uses the complete input."
+    },
+    "outputs": {
+      "quick": [
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "counting": [
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    }
+  },
+  {
+    "id": "06-radix",
+    "title": "Multiple digit passes: Radix Sort",
+    "domain": "sorting",
+    "payload": {
+      "data": [
+        170,
+        45,
+        750,
+        90,
+        802,
+        24,
+        2,
+        66,
+        4096,
+        256
+      ]
+    },
+    "algorithms": [
+      "radix"
+    ],
+    "why": "This implementation uses base 256, not decimal digits. Watch the passes at places 1 and 256; values are displayed with the signed offset restored.",
+    "file": "sorting/06-radix.csv",
+    "neutral_recommendation": "quick",
+    "exclusions": {
+      "Counting Sort": [
+        "Range k=4,095 exceeds the 200,000-bucket or 32n allocation guard (minimum allowance 256)."
+      ]
+    },
+    "profile": {
+      "n": 10,
+      "minimum": 2,
+      "maximum": 4096,
+      "range": 4095,
+      "unique": 10,
+      "duplicate_ratio": 0.0,
+      "sortedness": 0.4444444444444444,
+      "reverse_sortedness": 0.5555555555555556,
+      "inversions": 21,
+      "disorder": 0.4666666666666667,
+      "histogram": [
+        7,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sample": [
+        170,
+        45,
+        750,
+        90,
+        802,
+        24,
+        2,
+        66,
+        4096,
+        256
+      ],
+      "sample_note": "First 120 elements; profile uses the complete input."
+    },
+    "outputs": {
+      "radix": [
+        2,
+        24,
+        45,
+        66,
+        90,
+        170,
+        256,
+        750,
+        802,
+        4096
+      ]
+    }
+  },
+  {
+    "id": "07-signed",
+    "title": "Negative values and zero",
+    "domain": "sorting",
+    "payload": {
+      "data": [
+        -12,
+        7,
+        0,
+        -3,
+        15,
+        -12,
+        4,
+        -1
+      ]
+    },
+    "algorithms": [
+      "merge",
+      "radix"
+    ],
+    "why": "Negative numbers are valid. Merge compares normally; Radix translates by the minimum, sorts digits, and restores the offset.",
+    "file": "sorting/07-signed.csv",
+    "neutral_recommendation": "quick",
+    "exclusions": {},
+    "profile": {
+      "n": 8,
+      "minimum": -12,
+      "maximum": 15,
+      "range": 28,
+      "unique": 7,
+      "duplicate_ratio": 0.125,
+      "sortedness": 0.42857142857142855,
+      "reverse_sortedness": 0.5714285714285714,
+      "inversions": 13,
+      "disorder": 0.4642857142857143,
+      "histogram": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sample": [
+        -12,
+        7,
+        0,
+        -3,
+        15,
+        -12,
+        4,
+        -1
+      ],
+      "sample_note": "First 120 elements; profile uses the complete input."
+    },
+    "outputs": {
+      "merge": [
+        -12,
+        -12,
+        -3,
+        -1,
+        0,
+        4,
+        7,
+        15
+      ],
+      "radix": [
+        -12,
+        -12,
+        -3,
+        -1,
+        0,
+        4,
+        7,
+        15
+      ]
+    }
+  },
+  {
+    "id": "08-wide-range",
+    "title": "Huge numeric range",
+    "domain": "sorting",
+    "payload": {
+      "data": [
+        1000000,
+        -500000,
+        42,
+        999999,
+        0,
+        -2,
+        750000
+      ]
+    },
+    "algorithms": [
+      "quick",
+      "heap"
+    ],
+    "why": "Counting Sort is excluded by its allocation guard. Explain why seven elements can still require an enormous count array.",
+    "file": "sorting/08-wide-range.csv",
+    "neutral_recommendation": "quick",
+    "exclusions": {
+      "Counting Sort": [
+        "Range k=1,500,001 exceeds the 200,000-bucket or 32n allocation guard (minimum allowance 256)."
+      ]
+    },
+    "profile": {
+      "n": 7,
+      "minimum": -500000,
+      "maximum": 1000000,
+      "range": 1500001,
+      "unique": 7,
+      "duplicate_ratio": 0.0,
+      "sortedness": 0.5,
+      "reverse_sortedness": 0.5,
+      "inversions": 12,
+      "disorder": 0.5714285714285714,
+      "histogram": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        2
+      ],
+      "sample": [
+        1000000,
+        -500000,
+        42,
+        999999,
+        0,
+        -2,
+        750000
+      ],
+      "sample_note": "First 120 elements; profile uses the complete input."
+    },
+    "outputs": {
+      "quick": [
+        -500000,
+        -2,
+        0,
+        42,
+        750000,
+        999999,
+        1000000
+      ],
+      "heap": [
+        -500000,
+        -2,
+        0,
+        42,
+        750000,
+        999999,
+        1000000
+      ]
+    }
+  },
+  {
+    "id": "09-stable",
+    "title": "Require stable ordering",
+    "domain": "sorting",
+    "payload": {
+      "data": [
+        42,
+        7,
+        42,
+        3,
+        19,
+        7,
+        30,
+        3
+      ],
+      "stable": true
+    },
+    "algorithms": [
+      "merge"
+    ],
+    "why": "Enable Require a stable sort. Quick and Heap are excluded. Equal plain integers have no record identity, so this UI demonstrates eligibility, not a visible proof of stability.",
+    "file": "sorting/09-stable.csv",
+    "neutral_recommendation": "merge",
+    "exclusions": {
+      "Quick Sort": [
+        "Stable ordering is required; this implementation is unstable."
+      ],
+      "Heap Sort": [
+        "Stable ordering is required; this implementation is unstable."
+      ]
+    },
+    "profile": {
+      "n": 8,
+      "minimum": 3,
+      "maximum": 42,
+      "range": 40,
+      "unique": 5,
+      "duplicate_ratio": 0.375,
+      "sortedness": 0.42857142857142855,
+      "reverse_sortedness": 0.5714285714285714,
+      "inversions": 17,
+      "disorder": 0.6071428571428571,
+      "histogram": [
+        2,
+        2,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "sample": [
+        42,
+        7,
+        42,
+        3,
+        19,
+        7,
+        30,
+        3
+      ],
+      "sample_note": "First 120 elements; profile uses the complete input."
+    },
+    "outputs": {
+      "merge": [
+        3,
+        3,
+        7,
+        7,
+        19,
+        30,
+        42,
+        42
+      ]
+    }
+  },
+  {
+    "id": "10-memory",
+    "title": "Limited memory: Heap Sort",
+    "domain": "sorting",
+    "payload": {
+      "data": [
+        48,
+        15,
+        32,
+        7,
+        61,
+        24,
+        3,
+        56,
+        19,
+        40
+      ],
+      "memory": "limited"
+    },
+    "algorithms": [
+      "heap"
+    ],
+    "why": "Set Memory policy to Limited auxiliary memory. Merge, Counting, and Radix are excluded; select Heap to explain parent/child comparisons and the sorted suffix.",
+    "file": "sorting/10-memory.csv",
+    "neutral_recommendation": "quick",
+    "exclusions": {
+      "Merge Sort": [
+        "Limited-memory mode excludes linear auxiliary arrays."
+      ],
+      "Counting Sort": [
+        "Limited-memory mode excludes linear auxiliary arrays."
+      ],
+      "Radix Sort": [
+        "Limited-memory mode excludes linear auxiliary arrays."
+      ]
+    },
+    "profile": {
+      "n": 10,
+      "minimum": 3,
+      "maximum": 61,
+      "range": 59,
+      "unique": 10,
+      "duplicate_ratio": 0.0,
+      "sortedness": 0.4444444444444444,
+      "reverse_sortedness": 0.5555555555555556,
+      "inversions": 23,
+      "disorder": 0.5111111111111111,
+      "histogram": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "sample": [
+        48,
+        15,
+        32,
+        7,
+        61,
+        24,
+        3,
+        56,
+        19,
+        40
+      ],
+      "sample_note": "First 120 elements; profile uses the complete input."
+    },
+    "outputs": {
+      "heap": [
+        3,
+        7,
+        15,
+        19,
+        24,
+        32,
+        40,
+        48,
+        56,
+        61
+      ]
+    }
+  },
+  {
+    "id": "11-sorted",
+    "title": "Already sorted",
+    "domain": "sorting",
+    "payload": {
+      "data": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16
+      ]
+    },
+    "algorithms": [
+      "insertion"
+    ],
+    "why": "Zero inversions. Insertion Sort stops each comparison loop without shifting earlier values.",
+    "file": "sorting/11-sorted.csv",
+    "neutral_recommendation": "insertion",
+    "exclusions": {},
+    "profile": {
+      "n": 8,
+      "minimum": 2,
+      "maximum": 16,
+      "range": 15,
+      "unique": 8,
+      "duplicate_ratio": 0.0,
+      "sortedness": 1.0,
+      "reverse_sortedness": 0.0,
+      "inversions": 0,
+      "disorder": 0.0,
+      "histogram": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "sample": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16
+      ],
+      "sample_note": "First 120 elements; profile uses the complete input."
+    },
+    "outputs": {
+      "insertion": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16
+      ]
+    }
+  },
+  {
+    "id": "12-all-equal",
+    "title": "All values equal",
+    "domain": "sorting",
+    "payload": {
+      "data": [
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9
+      ]
+    },
+    "algorithms": [
+      "quick",
+      "insertion"
+    ],
+    "why": "The range is one and there are zero inversions. Quick Sort consumes one equal-pivot group; do not claim a universal timing winner.",
+    "file": "sorting/12-all-equal.csv",
+    "neutral_recommendation": "insertion",
+    "exclusions": {},
+    "profile": {
+      "n": 8,
+      "minimum": 9,
+      "maximum": 9,
+      "range": 1,
+      "unique": 1,
+      "duplicate_ratio": 0.875,
+      "sortedness": 1.0,
+      "reverse_sortedness": 1.0,
+      "inversions": 0,
+      "disorder": 0.0,
+      "histogram": [
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sample": [
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "sample_note": "First 120 elements; profile uses the complete input."
+    },
+    "outputs": {
+      "quick": [
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "insertion": [
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9
+      ]
+    }
+  },
+  {
+    "id": "13-singleton",
+    "title": "Single element",
+    "domain": "sorting",
+    "payload": {
+      "data": [
+        42
+      ]
+    },
+    "algorithms": [
+      "merge"
+    ],
+    "why": "An immediate base case: start and completed frames, with no meaningful sorting work.",
+    "file": "sorting/13-singleton.csv",
+    "neutral_recommendation": "insertion",
+    "exclusions": {},
+    "profile": {
+      "n": 1,
+      "minimum": 42,
+      "maximum": 42,
+      "range": 1,
+      "unique": 1,
+      "duplicate_ratio": 0.0,
+      "sortedness": 1,
+      "reverse_sortedness": 1,
+      "inversions": 0,
+      "disorder": 0,
+      "histogram": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sample": [
+        42
+      ],
+      "sample_note": "First 120 elements; profile uses the complete input."
+    },
+    "outputs": {
+      "merge": [
+        42
+      ]
+    }
+  },
+  {
+    "id": "01-linear",
+    "title": "Linear: early hit, late hit, and miss",
+    "domain": "searching",
+    "payload": {
+      "data": [
+        18,
+        7,
+        31,
+        4,
+        25,
+        12
+      ],
+      "queries": [
+        18,
+        12,
+        99
+      ]
+    },
+    "algorithms": [
+      "linear"
+    ],
+    "why": "Trace every comparison. Targets 18, 12, and 99 respectively hit first, hit last, and scan the whole list without a match.",
+    "file": "searching/01-linear.csv",
+    "neutral_recommendation": "hash",
+    "exclusions": {
+      "Binary Search": [
+        "Input is unsorted. Enable sort preprocessing to make Binary Search applicable."
+      ]
+    },
+    "profile": {
+      "n": 6,
+      "minimum": 4,
+      "maximum": 31,
+      "range": 28,
+      "unique": 6,
+      "duplicate_ratio": 0.0,
+      "sortedness": 0.4,
+      "reverse_sortedness": 0.6,
+      "inversions": 8,
+      "disorder": 0.5333333333333333,
+      "histogram": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "sample": [
+        18,
+        7,
+        31,
+        4,
+        25,
+        12
+      ],
+      "sample_note": "First 120 elements; profile uses the complete input.",
+      "query_count": 3,
+      "updates": 0,
+      "allow_preprocessing": false
+    },
+    "outputs": {
+      "linear": [
+        true,
+        true,
+        false
+      ]
+    }
+  },
+  {
+    "id": "02-binary",
+    "title": "Binary: already sorted input",
+    "domain": "searching",
+    "payload": {
+      "data": [
+        3,
+        6,
+        9,
+        12,
+        15,
+        18,
+        21,
+        24,
+        27,
+        30,
+        33,
+        36,
+        39,
+        42,
+        45,
+        48,
+        51,
+        54,
+        57,
+        60,
+        63,
+        66,
+        69,
+        72,
+        75,
+        78,
+        81,
+        84,
+        87,
+        90,
+        93,
+        96
+      ],
+      "queries": [
+        3,
+        24,
+        48,
+        72,
+        96,
+        1,
+        97,
+        33
+      ]
+    },
+    "algorithms": [
+      "binary"
+    ],
+    "why": "No preprocessing is needed. Show low, mid, and high moving inward. All 32 values fit in playback.",
+    "file": "searching/02-binary.csv",
+    "neutral_recommendation": "binary",
+    "exclusions": {},
+    "profile": {
+      "n": 32,
+      "minimum": 3,
+      "maximum": 96,
+      "range": 94,
+      "unique": 32,
+      "duplicate_ratio": 0.0,
+      "sortedness": 1.0,
+      "reverse_sortedness": 0.0,
+      "inversions": 0,
+      "disorder": 0.0,
+      "histogram": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "sample": [
+        3,
+        6,
+        9,
+        12,
+        15,
+        18,
+        21,
+        24,
+        27,
+        30,
+        33,
+        36,
+        39,
+        42,
+        45,
+        48,
+        51,
+        54,
+        57,
+        60,
+        63,
+        66,
+        69,
+        72,
+        75,
+        78,
+        81,
+        84,
+        87,
+        90,
+        93,
+        96
+      ],
+      "sample_note": "First 120 elements; profile uses the complete input.",
+      "query_count": 8,
+      "updates": 0,
+      "allow_preprocessing": false
+    },
+    "outputs": {
+      "binary": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        true
+      ]
+    }
+  },
+  {
+    "id": "03-preprocessing",
+    "title": "Binary: unsorted input",
+    "domain": "searching",
+    "payload": {
+      "data": [
+        45,
+        12,
+        78,
+        3,
+        29,
+        60,
+        8,
+        91,
+        17,
+        36
+      ],
+      "allow_preprocessing": true,
+      "queries": [
+        29,
+        91,
+        100
+      ]
+    },
+    "algorithms": [
+      "binary"
+    ],
+    "why": "First leave preprocessing off: Binary is excluded. Then enable Allow sorting before Binary Search. Watch Merge Sort followed by midpoint checks.",
+    "file": "searching/03-preprocessing.csv",
+    "neutral_recommendation": "linear",
+    "exclusions": {},
+    "profile": {
+      "n": 10,
+      "minimum": 3,
+      "maximum": 91,
+      "range": 89,
+      "unique": 10,
+      "duplicate_ratio": 0.0,
+      "sortedness": 0.5555555555555556,
+      "reverse_sortedness": 0.4444444444444444,
+      "inversions": 21,
+      "disorder": 0.4666666666666667,
+      "histogram": [
+        2,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "sample": [
+        45,
+        12,
+        78,
+        3,
+        29,
+        60,
+        8,
+        91,
+        17,
+        36
+      ],
+      "sample_note": "First 120 elements; profile uses the complete input.",
+      "query_count": 3,
+      "updates": 0,
+      "allow_preprocessing": true
+    },
+    "outputs": {
+      "binary": [
+        true,
+        true,
+        false
+      ]
+    }
+  },
+  {
+    "id": "04-hash",
+    "title": "Hash: many membership queries",
+    "domain": "searching",
+    "payload": {
+      "data": [
+        41,
+        7,
+        89,
+        23,
+        56,
+        12,
+        94,
+        3,
+        68,
+        35,
+        17,
+        80,
+        29,
+        62,
+        5,
+        47
+      ],
+      "queries": [
+        7,
+        89,
+        5,
+        47,
+        100,
+        0,
+        62,
+        41
+      ]
+    },
+    "algorithms": [
+      "hash"
+    ],
+    "why": "Eight targets amortize index construction. Explain the build phase and then query buckets. Index construction is included in benchmarks.",
+    "file": "searching/04-hash.csv",
+    "neutral_recommendation": "hash",
+    "exclusions": {
+      "Binary Search": [
+        "Input is unsorted. Enable sort preprocessing to make Binary Search applicable."
+      ]
+    },
+    "profile": {
+      "n": 16,
+      "minimum": 3,
+      "maximum": 94,
+      "range": 92,
+      "unique": 16,
+      "duplicate_ratio": 0.0,
+      "sortedness": 0.4666666666666667,
+      "reverse_sortedness": 0.5333333333333333,
+      "inversions": 61,
+      "disorder": 0.5083333333333333,
+      "histogram": [
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "sample": [
+        41,
+        7,
+        89,
+        23,
+        56,
+        12,
+        94,
+        3,
+        68,
+        35,
+        17,
+        80,
+        29,
+        62,
+        5,
+        47
+      ],
+      "sample_note": "First 120 elements; profile uses the complete input.",
+      "query_count": 8,
+      "updates": 0,
+      "allow_preprocessing": false
+    },
+    "outputs": {
+      "hash": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        true,
+        true
+      ]
+    }
+  },
+  {
+    "id": "05-collisions",
+    "title": "Hash: deliberate collision chain",
+    "domain": "searching",
+    "payload": {
+      "data": [
+        1,
+        14,
+        27,
+        40,
+        53,
+        66
+      ],
+      "queries": [
+        27,
+        79,
+        66
+      ]
+    },
+    "algorithms": [
+      "hash"
+    ],
+    "why": "Six values create 13 buckets (2n+1). Every value lands in bucket 1. Target 79 also hashes to 1 but is absent; the entire chain is checked.",
+    "file": "searching/05-collisions.csv",
+    "neutral_recommendation": "binary",
+    "exclusions": {},
+    "profile": {
+      "n": 6,
+      "minimum": 1,
+      "maximum": 66,
+      "range": 66,
+      "unique": 6,
+      "duplicate_ratio": 0.0,
+      "sortedness": 1.0,
+      "reverse_sortedness": 0.0,
+      "inversions": 0,
+      "disorder": 0.0,
+      "histogram": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "sample": [
+        1,
+        14,
+        27,
+        40,
+        53,
+        66
+      ],
+      "sample_note": "First 120 elements; profile uses the complete input.",
+      "query_count": 3,
+      "updates": 0,
+      "allow_preprocessing": false
+    },
+    "outputs": {
+      "hash": [
+        true,
+        false,
+        true
+      ]
+    }
+  },
+  {
+    "id": "06-duplicates",
+    "title": "Search duplicates and negative targets",
+    "domain": "searching",
+    "payload": {
+      "data": [
+        -5,
+        3,
+        -5,
+        8,
+        0,
+        3,
+        12
+      ],
+      "queries": [
+        -5,
+        3,
+        99,
+        0
+      ]
+    },
+    "algorithms": [
+      "linear",
+      "hash"
+    ],
+    "why": "Membership returns Found or Not found per query, not a duplicate count or original index.",
+    "file": "searching/06-duplicates.csv",
+    "neutral_recommendation": "hash",
+    "exclusions": {
+      "Binary Search": [
+        "Input is unsorted. Enable sort preprocessing to make Binary Search applicable."
+      ]
+    },
+    "profile": {
+      "n": 7,
+      "minimum": -5,
+      "maximum": 12,
+      "range": 18,
+      "unique": 5,
+      "duplicate_ratio": 0.2857142857142857,
+      "sortedness": 0.6666666666666666,
+      "reverse_sortedness": 0.3333333333333333,
+      "inversions": 4,
+      "disorder": 0.19047619047619047,
+      "histogram": [
+        2,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "sample": [
+        -5,
+        3,
+        -5,
+        8,
+        0,
+        3,
+        12
+      ],
+      "sample_note": "First 120 elements; profile uses the complete input.",
+      "query_count": 4,
+      "updates": 0,
+      "allow_preprocessing": false
+    },
+    "outputs": {
+      "linear": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "hash": [
+        true,
+        true,
+        false,
+        true
+      ]
+    }
+  },
+  {
+    "id": "01-traversal",
+    "title": "BFS versus DFS",
+    "domain": "graph",
+    "payload": {
+      "nodes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "edges": [
+        {
+          "source": "A",
+          "target": "B",
+          "weight": 1
+        },
+        {
+          "source": "A",
+          "target": "C",
+          "weight": 1
+        },
+        {
+          "source": "B",
+          "target": "D",
+          "weight": 1
+        },
+        {
+          "source": "B",
+          "target": "E",
+          "weight": 1
+        },
+        {
+          "source": "C",
+          "target": "F",
+          "weight": 1
+        },
+        {
+          "source": "F",
+          "target": "G",
+          "weight": 1
+        }
+      ],
+      "source": "A",
+      "directed": true,
+      "task": "traversal"
+    },
+    "algorithms": [
+      "bfs",
+      "dfs"
+    ],
+    "why": "Set task to Traversal / reachability. BFS explores by queue layers; DFS follows a branch and backtracks. Order depends on the listed edge order.",
+    "file": "graph/01-traversal.csv",
+    "neutral_recommendation": "bfs",
+    "exclusions": {
+      "Dijkstra": [
+        "Task is traversal; only BFS and DFS are candidates."
+      ],
+      "Bellman–Ford": [
+        "Task is traversal; only BFS and DFS are candidates."
+      ],
+      "Floyd–Warshall": [
+        "Task is traversal; only BFS and DFS are candidates."
+      ]
+    },
+    "profile": {
+      "n": 7,
+      "vertices": 7,
+      "edges": 6,
+      "density": 0.14285714285714285,
+      "directed": true,
+      "weighted": false,
+      "negative_edges": 0,
+      "task": "traversal"
+    },
+    "outputs": {
+      "bfs": {
+        "order": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G"
+        ],
+        "distances": {
+          "A": 0,
+          "B": 1,
+          "C": 1,
+          "D": 2,
+          "E": 2,
+          "F": 2,
+          "G": 3
+        },
+        "parents": {
+          "B": "A",
+          "C": "A",
+          "D": "B",
+          "E": "B",
+          "F": "C",
+          "G": "F"
+        }
+      },
+      "dfs": {
+        "order": [
+          "A",
+          "B",
+          "D",
+          "E",
+          "C",
+          "F",
+          "G"
+        ],
+        "distances": {
+          "A": 0,
+          "B": 1,
+          "C": 1,
+          "D": 2,
+          "E": 2,
+          "F": 2,
+          "G": 3
+        },
+        "parents": {
+          "B": "A",
+          "D": "B",
+          "E": "B",
+          "C": "A",
+          "F": "C",
+          "G": "F"
+        }
+      }
+    }
+  },
+  {
+    "id": "02-unweighted",
+    "title": "BFS shortest paths",
+    "domain": "graph",
+    "payload": {
+      "nodes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "edges": [
+        {
+          "source": "A",
+          "target": "B",
+          "weight": 1
+        },
+        {
+          "source": "A",
+          "target": "C",
+          "weight": 1
+        },
+        {
+          "source": "B",
+          "target": "D",
+          "weight": 1
+        },
+        {
+          "source": "B",
+          "target": "E",
+          "weight": 1
+        },
+        {
+          "source": "C",
+          "target": "F",
+          "weight": 1
+        },
+        {
+          "source": "F",
+          "target": "G",
+          "weight": 1
+        }
+      ],
+      "source": "A",
+      "directed": true,
+      "task": "single-source"
+    },
+    "algorithms": [
+      "bfs"
+    ],
+    "why": "Set Single-source shortest path. Every weight is 1, so BFS gives shortest distances in edge counts. A to G takes three edges.",
+    "file": "graph/02-unweighted.csv",
+    "neutral_recommendation": "bfs",
+    "exclusions": {
+      "Depth-first Search": [
+        "This algorithm does not match the single-source shortest-path task."
+      ],
+      "Floyd–Warshall": [
+        "This algorithm does not match the single-source shortest-path task."
+      ]
+    },
+    "profile": {
+      "n": 7,
+      "vertices": 7,
+      "edges": 6,
+      "density": 0.14285714285714285,
+      "directed": true,
+      "weighted": false,
+      "negative_edges": 0,
+      "task": "single-source"
+    },
+    "outputs": {
+      "bfs": {
+        "order": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G"
+        ],
+        "distances": {
+          "A": 0,
+          "B": 1,
+          "C": 1,
+          "D": 2,
+          "E": 2,
+          "F": 2,
+          "G": 3
+        },
+        "parents": {
+          "B": "A",
+          "C": "A",
+          "D": "B",
+          "E": "B",
+          "F": "C",
+          "G": "F"
+        }
+      }
+    }
+  },
+  {
+    "id": "03-dijkstra",
+    "title": "Positive weights: Dijkstra",
+    "domain": "graph",
+    "payload": {
+      "nodes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "edges": [
+        {
+          "source": "A",
+          "target": "B",
+          "weight": 4
+        },
+        {
+          "source": "A",
+          "target": "C",
+          "weight": 1
+        },
+        {
+          "source": "C",
+          "target": "B",
+          "weight": 2
+        },
+        {
+          "source": "B",
+          "target": "D",
+          "weight": 1
+        },
+        {
+          "source": "C",
+          "target": "D",
+          "weight": 5
+        },
+        {
+          "source": "D",
+          "target": "E",
+          "weight": 3
+        },
+        {
+          "source": "C",
+          "target": "E",
+          "weight": 10
+        }
+      ],
+      "source": "A",
+      "directed": true,
+      "task": "single-source"
+    },
+    "algorithms": [
+      "dijkstra"
+    ],
+    "why": "Watch B improve from 4 to 3 through C. The shortest route A → C → B → D → E has distance 7.",
+    "file": "graph/03-dijkstra.csv",
+    "neutral_recommendation": "dijkstra",
+    "exclusions": {
+      "Breadth-first Search": [
+        "BFS shortest paths require every edge weight to be 1."
+      ],
+      "Depth-first Search": [
+        "This algorithm does not match the single-source shortest-path task."
+      ],
+      "Floyd–Warshall": [
+        "This algorithm does not match the single-source shortest-path task."
+      ]
+    },
+    "profile": {
+      "n": 5,
+      "vertices": 5,
+      "edges": 7,
+      "density": 0.35,
+      "directed": true,
+      "weighted": true,
+      "negative_edges": 0,
+      "task": "single-source"
+    },
+    "outputs": {
+      "dijkstra": {
+        "distances": {
+          "A": 0,
+          "B": 3,
+          "C": 1,
+          "D": 4,
+          "E": 7
+        },
+        "parents": {
+          "B": "C",
+          "C": "A",
+          "D": "B",
+          "E": "D"
+        }
+      }
+    }
+  },
+  {
+    "id": "04-negative-edge",
+    "title": "Negative edge: Bellman–Ford",
+    "domain": "graph",
+    "payload": {
+      "nodes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "edges": [
+        {
+          "source": "A",
+          "target": "B",
+          "weight": 4
+        },
+        {
+          "source": "A",
+          "target": "C",
+          "weight": 1
+        },
+        {
+          "source": "C",
+          "target": "B",
+          "weight": -2
+        },
+        {
+          "source": "B",
+          "target": "D",
+          "weight": 1
+        },
+        {
+          "source": "C",
+          "target": "D",
+          "weight": 5
+        },
+        {
+          "source": "D",
+          "target": "E",
+          "weight": 3
+        },
+        {
+          "source": "C",
+          "target": "E",
+          "weight": 10
+        }
+      ],
+      "source": "A",
+      "directed": true,
+      "task": "single-source"
+    },
+    "algorithms": [
+      "bellman"
+    ],
+    "why": "Keep Directed enabled. Dijkstra is excluded. The route A → C → B → D → E has distance 3; this graph has no negative cycle.",
+    "file": "graph/04-negative-edge.csv",
+    "neutral_recommendation": "bellman",
+    "exclusions": {
+      "Breadth-first Search": [
+        "BFS shortest paths require every edge weight to be 1."
+      ],
+      "Depth-first Search": [
+        "This algorithm does not match the single-source shortest-path task."
+      ],
+      "Dijkstra": [
+        "1 negative edges violate Dijkstra's non-negative-weight requirement."
+      ],
+      "Floyd–Warshall": [
+        "This algorithm does not match the single-source shortest-path task."
+      ]
+    },
+    "profile": {
+      "n": 5,
+      "vertices": 5,
+      "edges": 7,
+      "density": 0.35,
+      "directed": true,
+      "weighted": true,
+      "negative_edges": 1,
+      "task": "single-source"
+    },
+    "outputs": {
+      "bellman": {
+        "distances": {
+          "A": 0,
+          "B": -1,
+          "C": 1,
+          "D": 0,
+          "E": 3
+        },
+        "parents": {
+          "B": "C",
+          "C": "A",
+          "D": "B",
+          "E": "D"
+        },
+        "negative_cycle": false
+      }
+    }
+  },
+  {
+    "id": "05-all-pairs",
+    "title": "All pairs: Floyd–Warshall",
+    "domain": "graph",
+    "payload": {
+      "nodes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "edges": [
+        {
+          "source": "A",
+          "target": "B",
+          "weight": 3
+        },
+        {
+          "source": "A",
+          "target": "C",
+          "weight": 10
+        },
+        {
+          "source": "B",
+          "target": "C",
+          "weight": 2
+        },
+        {
+          "source": "C",
+          "target": "A",
+          "weight": 4
+        }
+      ],
+      "source": "A",
+      "directed": true,
+      "task": "all-pairs"
+    },
+    "algorithms": [
+      "floyd"
+    ],
+    "why": "Set task to All-pairs shortest paths. Watch the A→C distance improve from 10 to 5 via B and other entries update.",
+    "file": "graph/05-all-pairs.csv",
+    "neutral_recommendation": "floyd",
+    "exclusions": {
+      "Breadth-first Search": [
+        "All-pairs task requires an all-pairs implementation.",
+        "BFS shortest paths require every edge weight to be 1."
+      ],
+      "Depth-first Search": [
+        "All-pairs task requires an all-pairs implementation."
+      ],
+      "Dijkstra": [
+        "All-pairs task requires an all-pairs implementation."
+      ],
+      "Bellman–Ford": [
+        "All-pairs task requires an all-pairs implementation."
+      ]
+    },
+    "profile": {
+      "n": 3,
+      "vertices": 3,
+      "edges": 4,
+      "density": 0.6666666666666666,
+      "directed": true,
+      "weighted": true,
+      "negative_edges": 0,
+      "task": "all-pairs"
+    },
+    "outputs": {
+      "floyd": {
+        "all_pairs": {
+          "A": {
+            "A": 0,
+            "B": 3,
+            "C": 5
+          },
+          "B": {
+            "A": 6,
+            "B": 0,
+            "C": 2
+          },
+          "C": {
+            "A": 4,
+            "B": 7,
+            "C": 0
+          }
+        },
+        "negative_cycle": false
+      }
+    }
+  },
+  {
+    "id": "06-disconnected",
+    "title": "Unreachable and isolated nodes",
+    "domain": "graph",
+    "payload": {
+      "nodes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "Z"
+      ],
+      "edges": [
+        {
+          "source": "A",
+          "target": "B",
+          "weight": 2
+        },
+        {
+          "source": "C",
+          "target": "D",
+          "weight": 1
+        }
+      ],
+      "source": "A",
+      "directed": true,
+      "task": "single-source"
+    },
+    "algorithms": [
+      "dijkstra"
+    ],
+    "why": "Explicitly enter node labels A, B, C, D, Z. Starting at A reaches B, while C, D, and isolated Z remain ∞.",
+    "file": "graph/06-disconnected.csv",
+    "neutral_recommendation": "dijkstra",
+    "exclusions": {
+      "Breadth-first Search": [
+        "BFS shortest paths require every edge weight to be 1."
+      ],
+      "Depth-first Search": [
+        "This algorithm does not match the single-source shortest-path task."
+      ],
+      "Floyd–Warshall": [
+        "This algorithm does not match the single-source shortest-path task."
+      ]
+    },
+    "profile": {
+      "n": 5,
+      "vertices": 5,
+      "edges": 2,
+      "density": 0.1,
+      "directed": true,
+      "weighted": true,
+      "negative_edges": 0,
+      "task": "single-source"
+    },
+    "outputs": {
+      "dijkstra": {
+        "distances": {
+          "A": 0,
+          "B": 2,
+          "C": null,
+          "D": null,
+          "Z": null
+        },
+        "parents": {
+          "B": "A"
+        }
+      }
+    }
+  },
+  {
+    "id": "07-negative-cycle",
+    "title": "Reachable negative cycle",
+    "domain": "graph",
+    "payload": {
+      "nodes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "edges": [
+        {
+          "source": "A",
+          "target": "B",
+          "weight": 1
+        },
+        {
+          "source": "B",
+          "target": "C",
+          "weight": -3
+        },
+        {
+          "source": "C",
+          "target": "A",
+          "weight": 1
+        }
+      ],
+      "source": "A",
+      "directed": true,
+      "task": "single-source"
+    },
+    "algorithms": [
+      "bellman"
+    ],
+    "why": "Keep Directed enabled. The cycle total is −1. The correct result is a negative-cycle message, not a finite shortest distance.",
+    "file": "graph/07-negative-cycle.csv",
+    "neutral_recommendation": "bellman",
+    "exclusions": {
+      "Breadth-first Search": [
+        "BFS shortest paths require every edge weight to be 1."
+      ],
+      "Depth-first Search": [
+        "This algorithm does not match the single-source shortest-path task."
+      ],
+      "Dijkstra": [
+        "1 negative edges violate Dijkstra's non-negative-weight requirement."
+      ],
+      "Floyd–Warshall": [
+        "This algorithm does not match the single-source shortest-path task."
+      ]
+    },
+    "profile": {
+      "n": 3,
+      "vertices": 3,
+      "edges": 3,
+      "density": 0.5,
+      "directed": true,
+      "weighted": true,
+      "negative_edges": 1,
+      "task": "single-source"
+    },
+    "outputs": {
+      "bellman": {
+        "negative_cycle": true
+      }
+    }
+  },
+  {
+    "id": "08-undirected",
+    "title": "Undirected weighted graph",
+    "domain": "graph",
+    "payload": {
+      "nodes": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "edges": [
+        {
+          "source": "A",
+          "target": "B",
+          "weight": 4
+        },
+        {
+          "source": "B",
+          "target": "C",
+          "weight": 2
+        },
+        {
+          "source": "A",
+          "target": "C",
+          "weight": 10
+        },
+        {
+          "source": "C",
+          "target": "D",
+          "weight": 1
+        }
+      ],
+      "source": "A",
+      "directed": false,
+      "task": "single-source"
+    },
+    "algorithms": [
+      "dijkstra"
+    ],
+    "why": "Turn Directed OFF after applying the graph. List each undirected connection only once. From A, distances are B=4, C=6, D=7.",
+    "file": "graph/08-undirected.csv",
+    "neutral_recommendation": "dijkstra",
+    "exclusions": {
+      "Breadth-first Search": [
+        "BFS shortest paths require every edge weight to be 1."
+      ],
+      "Depth-first Search": [
+        "This algorithm does not match the single-source shortest-path task."
+      ],
+      "Floyd–Warshall": [
+        "This algorithm does not match the single-source shortest-path task."
+      ]
+    },
+    "profile": {
+      "n": 4,
+      "vertices": 4,
+      "edges": 4,
+      "density": 0.6666666666666666,
+      "directed": false,
+      "weighted": true,
+      "negative_edges": 0,
+      "task": "single-source"
+    },
+    "outputs": {
+      "dijkstra": {
+        "distances": {
+          "A": 0,
+          "B": 4,
+          "C": 6,
+          "D": 7
+        },
+        "parents": {
+          "B": "A",
+          "C": "B",
+          "D": "C"
+        }
+      }
+    }
+  },
+  {
+    "id": "09-isolated-single",
+    "title": "One isolated vertex",
+    "domain": "graph",
+    "payload": {
+      "nodes": [
+        "A"
+      ],
+      "edges": [],
+      "source": "A",
+      "directed": true,
+      "task": "traversal"
+    },
+    "algorithms": [
+      "bfs"
+    ],
+    "why": "Enter node label A and leave the edge list empty. Apply graph, then select Traversal. The only visited node is A.",
+    "file": "graph/09-isolated-single.csv",
+    "neutral_recommendation": "bfs",
+    "exclusions": {
+      "Dijkstra": [
+        "Task is traversal; only BFS and DFS are candidates."
+      ],
+      "Bellman–Ford": [
+        "Task is traversal; only BFS and DFS are candidates."
+      ],
+      "Floyd–Warshall": [
+        "Task is traversal; only BFS and DFS are candidates."
+      ]
+    },
+    "profile": {
+      "n": 1,
+      "vertices": 1,
+      "edges": 0,
+      "density": 0,
+      "directed": true,
+      "weighted": false,
+      "negative_edges": 0,
+      "task": "traversal"
+    },
+    "outputs": {
+      "bfs": {
+        "order": [
+          "A"
+        ],
+        "distances": {
+          "A": 0
+        },
+        "parents": {}
+      }
+    }
+  },
+  {
+    "id": "14-complexity-80",
+    "title": "Complexity lab: five real prefixes",
+    "domain": "sorting",
+    "payload": {
+      "data": [
+        38,
+        12,
+        71,
+        5,
+        24,
+        12,
+        90,
+        3,
+        45,
+        18,
+        63,
+        9,
+        52,
+        31,
+        7,
+        84,
+        26,
+        40,
+        11,
+        68,
+        2,
+        57,
+        35,
+        79,
+        14,
+        46,
+        22,
+        95,
+        6,
+        61,
+        33,
+        17,
+        88,
+        4,
+        50,
+        28,
+        73,
+        10,
+        43,
+        65,
+        19,
+        82,
+        1,
+        54,
+        30,
+        76,
+        13,
+        48,
+        21,
+        92,
+        8,
+        59,
+        37,
+        69,
+        16,
+        44,
+        25,
+        87,
+        15,
+        62,
+        32,
+        77,
+        20,
+        55,
+        29,
+        93,
+        23,
+        66,
+        36,
+        81,
+        27,
+        49,
+        34,
+        74,
+        39,
+        58,
+        41,
+        86,
+        47,
+        70
+      ]
+    },
+    "algorithms": [
+      "merge"
+    ],
+    "why": "Analyze these 80 supplied values in Sorting, then open Complexity lab and choose Merge Sort. The five measured prefixes contain 16, 32, 48, 64, and 80 values. Small runtime differences can be noisy; use the Operations metric to discuss growth.",
+    "file": "sorting/14-complexity-80.csv",
+    "neutral_recommendation": "counting",
+    "exclusions": {},
+    "profile": {
+      "n": 80,
+      "minimum": 1,
+      "maximum": 95,
+      "range": 95,
+      "unique": 79,
+      "duplicate_ratio": 0.0125,
+      "sortedness": 0.4936708860759494,
+      "reverse_sortedness": 0.5063291139240507,
+      "inversions": 1308,
+      "disorder": 0.4139240506329114,
+      "histogram": [
+        6,
+        7,
+        6,
+        6,
+        6,
+        6,
+        5,
+        6,
+        4,
+        4,
+        5,
+        4,
+        4,
+        4,
+        4,
+        3
+      ],
+      "sample": [
+        38,
+        12,
+        71,
+        5,
+        24,
+        12,
+        90,
+        3,
+        45,
+        18,
+        63,
+        9,
+        52,
+        31,
+        7,
+        84,
+        26,
+        40,
+        11,
+        68,
+        2,
+        57,
+        35,
+        79,
+        14,
+        46,
+        22,
+        95,
+        6,
+        61,
+        33,
+        17,
+        88,
+        4,
+        50,
+        28,
+        73,
+        10,
+        43,
+        65,
+        19,
+        82,
+        1,
+        54,
+        30,
+        76,
+        13,
+        48,
+        21,
+        92,
+        8,
+        59,
+        37,
+        69,
+        16,
+        44,
+        25,
+        87,
+        15,
+        62,
+        32,
+        77,
+        20,
+        55,
+        29,
+        93,
+        23,
+        66,
+        36,
+        81,
+        27,
+        49,
+        34,
+        74,
+        39,
+        58,
+        41,
+        86,
+        47,
+        70
+      ],
+      "sample_note": "First 120 elements; profile uses the complete input."
+    },
+    "outputs": {
+      "merge": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        52,
+        54,
+        55,
+        57,
+        58,
+        59,
+        61,
+        62,
+        63,
+        65,
+        66,
+        68,
+        69,
+        70,
+        71,
+        73,
+        74,
+        76,
+        77,
+        79,
+        81,
+        82,
+        84,
+        86,
+        87,
+        88,
+        90,
+        92,
+        93,
+        95
+      ]
+    }
+  }
+]

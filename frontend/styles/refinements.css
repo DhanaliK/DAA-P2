@@ -1,0 +1,124 @@
+/* Neutral ink provides readable contrast; color is reserved for decisions and data. */
+.page-heading p,
+.section-detail,
+.domain-card p,
+.domain-card > small,
+.story-strip p,
+.profile-foot,
+.profile-metrics small,
+.axis-caption,
+.concept-note p,
+.empty-state p,
+.rank-name small,
+.rank-detail p,
+.score-breakdown > div > div,
+.score-breakdown small,
+.footnote,
+.baseline-card p,
+.methodology,
+.note-box,
+.reason-list p,
+.history-evidence p,
+.algorithm-reference > p,
+.empirical > p,
+.path-card p,
+.why-not article > p,
+.benchmark-boundary,
+.history-filters label,
+.graph-controls label {
+  color: #768285;
+}
+.profile-metrics strong,
+.stats-stack strong,
+.rank-row > strong,
+.history-stats strong,
+.complexity-facts b,
+.baseline-card strong,
+.why-not h3 {
+  color: #405760;
+}
+.domain-tabs > button,
+.domain-tabs > a,
+.preset,
+.input-tabs button,
+.generator-controls label,
+.chart-caption,
+.chart-caption > span:first-child,
+.rank-number,
+.ranking-legend,
+.history-stats span,
+.graph-legend,
+.complexity-facts > div,
+.benchmark-config p,
+.validate-callout small {
+  color: #849092;
+}
+.rank-name b,
+.section-heading h2 {
+  color: #34464c;
+}
+.hero h1,
+.winner-title h2 {
+  color: #f0f4ec;
+}
+.first .rank-name b,
+.preset.active,
+.input-tabs .selected,
+.domain-tabs .selected {
+  color: #b76b47;
+}
+.card > .footnote {
+  font-size: 12px;
+}
+.sidebar .nav-item {
+  font-size: 13px;
+}
+.domain-card p {
+  font-size: 14px;
+}
+.page-heading p {
+  font-size: 14px;
+}
+.winner-reasons p {
+  font-size: 12px;
+}
+.rank-name b {
+  font-size: 13px;
+}
+.rank-name {
+  width: 118px;
+}
+.rank-detail p {
+  font-size: 13px;
+}
+.concept-note p {
+  font-size: 13px;
+}
+.hero p {
+  font-size: 13px;
+}
+.preset {
+  font-size: 11px;
+}
+.input-tabs button {
+  font-size: 13px;
+}
+.main-shell .card p {
+  line-height: 1.75;
+}
+.card .score-breakdown small {
+  font-size: 10px;
+}
+.curve-controls .chosen {
+  background: #fafbf8;
+}
+.history-evidence b {
+  color: #5d7170;
+}
+.formula-banner {
+  background: #f0f3ef;
+}
+.formula-banner p,
+.formula-banner .eyebrow {
+  color: #7d8e85;
+}

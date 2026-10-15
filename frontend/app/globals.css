@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@import "../styles/base.css";
+@import "../styles/dashboard.css";
+@import "../styles/studio.css";
+@import "../styles/labs.css";
+@import "../styles/refinements.css";
+@import "../styles/motion.css";
+@import "../styles/responsive.css";
+@import "../styles/clarity.css";
+@import "../styles/visualizer.css";
